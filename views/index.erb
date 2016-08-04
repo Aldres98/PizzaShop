@@ -7,7 +7,7 @@
 	<div class="row">
 	<% @products.each do |i| %>
 	<div class="col-lg-4">
-		<a href="/">
+		<a href="/pizza/<%= i.id %>">
 		<p> <strong> <%= i.title %> </strong> </p>
 		<img src="<%= i.path_to_image %>" href="" style="max-width: 200px; max-height: 200px;" border="0"></img> 
 		</a>

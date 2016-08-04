@@ -24,7 +24,7 @@ end
 get '/new' do
 	@new_pizza = Product.new 
 	erb :new
-	
+
 end
 
 post '/new' do
@@ -35,4 +35,9 @@ post '/new' do
 		@error = @new_pizze.full_messages.first
 		erb :new
 	end
+end
+
+get '/pizza/:id' do
+	@pizza = Product.find(params[:id])
+	erb :pizzapage
 end

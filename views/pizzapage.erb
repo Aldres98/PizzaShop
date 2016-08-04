@@ -1,0 +1,42 @@
+<h2> Подробнее о пицце <%= @pizza.title %></h2>
+
+<div class="container" style="font-size: 25px">
+
+<div class="row">
+
+<div class="col-lg-4">
+
+<img src ="<%= @pizza.path_to_image %>" style="max-width:300px; max-height:300px "></img>
+</div>
+
+<div class="col-lg-4">
+<p> <%= @pizza.description %> </p>
+</div>
+
+<div class="col-md-4">
+<p> Цена: <%= @pizza.price %> рублей </p>
+</div>
+
+
+<% if @pizza.is_spice? %>
+<div class="col-md-4">
+<p> Острая </p>
+</div>
+<% end %>
+
+<% if @pizza.is_veg? %>
+<div class="col-md-4">
+<p> Вегетарианская </p>
+</div>
+<% end %>
+
+<% if @pizza.is_best_offer? %>
+<div class="col-md-4">
+<p> Лучшее предложение! </p>
+</div>
+<% end %>
+
+
+</div>
+
+</div>
