@@ -1,0 +1,63 @@
+<h2> Add new pizza! </h2>
+<div class="container">
+<form action="/new" method="POST" role="form">
+
+  <div class="form-group">
+    <label>Название пиццы</label>
+    <input name="product[title]"  type="text" class="form-control" placeholder="Ваше имя" value="<%= @new_pizza.title %>">
+  </div>
+
+  <div class="form-group">
+    <label>Описание пиццы</label>
+    <input name="product[description]"  type="text" class="form-control" placeholder="Описание" value="<%= @new_pizza.description %>">
+  </div>
+
+  <div class="form-group">
+    <label>Цена пиццы</label>
+    <input name="product[price]"  type="text" class="form-control" placeholder="Цена" value="<%= @new_pizza.price %>">
+  </div>
+
+  <div class="form-group">
+    <label>Размер пиццы (см)</label>
+    <input name="product[size]"  type="text" class="form-control" placeholder="Размер" value="<%= @new_pizza.size %>">
+  </div>
+
+  <div class="form-group">
+    <label>Название картиночки</label>
+    <input name="product[path_to_image]"  type="text" class="form-control" placeholder="Путь" value="/images/<%= @new_pizza.path_to_image %>">
+  </div>
+
+  <div class="row">
+  <div class="col lg-4">
+  	<div class="checkbox">
+  	<label>
+    <input name="product[is_spice]"  type="checkbox" value="<%= @new_pizza.is_spice %>"> Острая?
+    </label>
+    </div>
+  </div>
+
+  <div class="col lg-4">
+  	<div class="checkbox">
+  	<label>
+    <input name="product[is_veg]"  type="checkbox" value="<%= @new_pizza.is_veg %>"> Вегетарианская? 
+    </label>
+    </div>
+  </div>
+
+  <div class="col lg-4">
+  	<div class="checkbox">
+  	<label>
+    <input name="product[is_best_offer]"  type="checkbox" value="<%= @new_pizza.is_best_offer %>"> Лучшее предложение? 
+    </label>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+  <button type="submit" class="btn btn-primary">Записаться</button>
+
+</form>
+</div>

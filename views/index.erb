@@ -1,4 +1,20 @@
 <h2>Welcome to Pizza shop!</h2>
 
-<button class="btn btn-primary" onClick="something()">Click me</button>
+<!-- <button class="btn btn-primary" onClick="something()">Click me</button>
+ -->
+<div class="container">
 
+	<div class="row">
+	<% @products.each do |i| %>
+	<div class="col-lg-4">
+		<a href="/">
+		<p> <strong> <%= i.title %> </strong> </p>
+		<img src="<%= i.path_to_image %>" href="" style="max-width: 200px; max-height: 200px;" border="0"></img> 
+		</a>
+		<img src="/images/price.png/"><%= i.price %></img>
+	</div>
+	<% end %>
+
+
+	</div>
+</div>
