@@ -18,4 +18,11 @@ function add_to_cart(id)
     x = x * 1 + 1;
     window.localStorage.setItem(key, x);
 
+    for (var i=0, len=localStorage.length; i<len; i++ )
+    {
+        var show_key = localStorage.key(i);
+        var show_value = localStorage[show_key];
+        console.log(show_key + "=> " + show_value);
+    }
+
 }
