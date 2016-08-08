@@ -44,7 +44,7 @@
 			    	<li>
 			    	<form action="/cart" method="post" >
 			    	<input id="orders_input" type="hidden" name="orders" />
-			    	<input type="submit" class="btn btn-primary btn-large btn-lg" value="Cart (...)" />
+			    	<input id="orders_button" type="submit" class="btn btn-primary btn-large btn-lg" value="Cart (...)" />
 			    	</form>
 			    	</li>
 			    </ul>
@@ -70,6 +70,8 @@
 $(function() {
 
     update_orders_input();
+    update_orders_button();
+{
 
 });
 
