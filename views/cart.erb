@@ -33,7 +33,28 @@
 
 
     </tr>
-
-
-    </tbody>
+     </tbody>
 </table>
+
+<form action="/place_order" method="POST" role="form">
+
+ <input type="hidden" name="order[orders_input]"  value="<%= @orders_input %>">
+
+ <div class="form-group">
+    <label>Name:</label>
+    <input name="order[name]"  type="text" class="form-control" placeholder="Ваше имя" >
+  </div>
+
+  <div class="form-group">
+    <label>Phone:</label>
+    <input name="order[phone]" type="text" class="form-control" placeholder="Ваш телефон" >
+  </div>
+
+  <div class="form-group">
+    <label>Address:</label>
+    <input name="order[address]" type="text" class="form-control" placeholder="Ваш адрес: ">
+  </div>
+
+  <button type="submit" class="btn btn-success btn-lg">Place order</button>
+
+</form>
