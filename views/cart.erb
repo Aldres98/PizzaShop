@@ -7,6 +7,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Total Item price<tn>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
             <td><%= item[0].title %></td>
             <td><%= item[0].price %></td>
             <td><%= item[1] %></td>
+            <td> <%= item[1].to_i * item[0].price.to_i %>
         </tr>
     <% end %>
 
