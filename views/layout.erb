@@ -35,11 +35,18 @@
 			  </div>
 			  <div class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav">
-			      <li><a href="/new">Добавить пиццу</a></li>
+			      <li>
+			      <a href="/new">Добавить пиццу</a>
+			      </li>
 			    </ul>
 
 			    <ul class="nav navbar-nav navbar-right">
-			    	<li><a href="#">Cart(...)</a></li>
+			    	<li>
+			    	<form action="/cart" method="post" >
+			    	<input type="text" name="orders" />
+			    	<input type="submit" class="btn btn-primary btn-large btn-lg" value="Cart (...)" />
+			    	</form>
+			    	</li>
 			    </ul>
 			  </div><!--/.nav-collapse -->
 			</nav>
