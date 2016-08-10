@@ -11,6 +11,9 @@ class Product < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
+validates :name, presence: true
+validates :phone, presence: true
+validates :address, presence: true
 end
 
 before do 
@@ -36,14 +39,24 @@ post '/new' do
 	if @new_pizza.save
 		erb "<h2>New pizza succesfully added!</h2>"
 	else
-		@error = @new_pizze.full_messages.first
-		erb :new
+		@error = @new_pizza.full_messages.first
 	end
+
 end
 
 get '/pizza/:id' do
 	@pizza = Product.find(params[:id])
 	erb :pizzapage
+end
+
+
+post '/place_order' do
+    @order = Order.new params[:order]
+    if @order.save
+        erb :order_placed
+    else
+        @error = @order.errors.full_messages.first
+    end
 end
 
 post '/cart' do
