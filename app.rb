@@ -56,6 +56,7 @@ post '/place_order' do
         erb :order_placed
     else
         @error = @order.errors.full_messages.first
+        erb "Error"
     end
 end
 
@@ -63,10 +64,12 @@ post '/cart' do
 	@orders_input = params[:orders]
 	@items = parse_orders_input @orders_input
 
-	@items.each do |item|
-		#id, cnt
-		  item[0] = Product.find(item[0])
+    if @items.length == 0
+        return erb :cart_is_empty
+    end
 
+	@items.each do |item|
+	   item[0] = Product.find(item[0])
     end
 
 
@@ -75,7 +78,7 @@ end
 
 def parse_orders_input orders_input
 
-    s1 = @orders_input.split(/,/)
+    s1 = orders_input.split(/,/)
 
     arr=[]
 
