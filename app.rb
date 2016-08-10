@@ -6,6 +6,7 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:pizzashop.db"
 
+
 class Product < ActiveRecord::Base
 end
 
@@ -48,8 +49,10 @@ post '/cart' do
 
 	@items.each do |item|
 		#id, cnt
-		item[0] = Product.find(item[0])
-	end
+		  item[0] = Product.find(item[0])
+
+    end
+
 
     erb :cart
 end
