@@ -88,10 +88,9 @@ function cart_get_orders()
 
 }
 
-function clear_cart() {
-
+function cancel_order() {
 
     window.localStorage.clear();
-
+    return false;
 
 }
